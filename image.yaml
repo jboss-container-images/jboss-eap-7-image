@@ -43,4 +43,5 @@ sources:
     # 7.1.0.DR18 (7.1.0.Beta1-redhat-3)
     - url: jboss-eap-7.1.0.Beta.zip
       md5: b42a26f7d292d4293c37cb6d8d64650e
-
+dogen:
+    version: 2.0.0rc15
