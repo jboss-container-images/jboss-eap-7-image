@@ -1,0 +1,50 @@
+name: "jboss-eap-7/eap70"
+version: "7.0.5"
+from: "jboss/openjdk18-rhel7:1.0"
+user: 185
+labels:
+    - name: "com.redhat.deployments-dir"
+      value: "/opt/eap/standalone/deployments"
+    - name: "com.redhat.dev-mode"
+      value: "DEBUG:true"
+      description: "Environment variable used to enable development mode (debugging). A value of true will enable development mode."
+    - name: "com.redhat.dev-mode.port"
+      value: "DEBUG_PORT:8787"
+      description: "Environment variable used to specify the debug port. If not set, the default EAP debug port will be used (8787). Only applicable when development mode is enabled."
+envs:
+    information:
+        - name: "LAUNCH_JBOSS_IN_BACKGROUND"
+          value: "true"
+        - name: "JBOSS_PRODUCT"
+          value: "eap"
+        - name: "JBOSS_EAP_VERSION"
+          value: "7.0.5.GA"
+        - name: "PRODUCT_VERSION"
+          value: "7.0.5.GA"
+        - name: "JBOSS_HOME"
+          value: "/opt/eap"
+    configuration:
+        - name: "DEBUG"
+          example: "true"
+          description: "Specify true to enable development mode (debugging)."
+        - name: "DEBUG_PORT"
+          example: "8787"
+          description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
+ports:
+    - value: 8080
+debugport: 8787
+cmd:
+    - "/opt/eap/bin/standalone.sh"
+    - "-b"
+    - "0.0.0.0"
+scripts:
+    - package: eap-7
+      exec: install_eap70.sh
+      user: root
+sources:
+    - url: jboss-eap-7.0.0.zip
+      md5: cd02482daa0398bf5500e1628d28179a
+    - url: jboss-eap-7.0.5-patch.zip
+      md5: f47ab5260c9838a0789e5b3d59095bbb
+dogen:
+    version: 2.0.0rc15
