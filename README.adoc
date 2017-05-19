@@ -1,0 +1,8 @@
+# Red Hat JBoss Enterprise Application Platform 7.1 container image
+
+NOTE: Extends link:https://github.com/jboss-container-images/jboss-openjdk-image[JBoss OpenJDK image]
+
+# License
+
+See link:LICENSE[LICENSE] file.
+
