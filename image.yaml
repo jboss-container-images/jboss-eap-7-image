@@ -1,5 +1,5 @@
 name: "jboss-eap-7/eap70"
-version: "7.0.5"
+version: "7.0.6"
 from: "jboss/openjdk18-rhel7:1.0"
 user: 185
 labels:
@@ -18,9 +18,9 @@ envs:
         - name: "JBOSS_PRODUCT"
           value: "eap"
         - name: "JBOSS_EAP_VERSION"
-          value: "7.0.5.GA"
+          value: "7.0.6.GA"
         - name: "PRODUCT_VERSION"
-          value: "7.0.5.GA"
+          value: "7.0.6.GA"
         - name: "JBOSS_HOME"
           value: "/opt/eap"
     configuration:
@@ -45,7 +45,8 @@ scripts:
 sources:
     - url: jboss-eap-7.0.0.zip
       md5: cd02482daa0398bf5500e1628d28179a
-    - url: jboss-eap-7.0.5-patch.zip
-      md5: f47ab5260c9838a0789e5b3d59095bbb
+      # Based on CR 2
+    - url: jboss-eap-7.0.6-patch.zip
+      md5: dbb8938a32e4931f8eb4b87c4a63c9e1
 dogen:
     version: 2.0.0rc16
