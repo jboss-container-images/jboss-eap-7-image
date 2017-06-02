@@ -32,7 +32,8 @@ envs:
           description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
 ports:
     - value: 8080
-debugport: 8787
+    - value: 8787
+      expose: false
 cmd:
     - "/opt/eap/bin/standalone.sh"
     - "-b"
@@ -47,4 +48,4 @@ sources:
     - url: jboss-eap-7.0.5-patch.zip
       md5: f47ab5260c9838a0789e5b3d59095bbb
 dogen:
-    version: 2.0.0rc15
+    version: 2.0.0rc16
