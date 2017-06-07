@@ -42,11 +42,11 @@ scripts:
       exec: install_eap70.sh
       user: root
 sources:
-    - url: jboss-eap-7.0.0.zip
+    - artifact: jboss-eap-7.0.0.zip
       md5: cd02482daa0398bf5500e1628d28179a
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=43891&product=appplatform&version=7.0&downloadType=distributions"
       # Based on CR 2
-    - url: jboss-eap-7.0.6-patch.zip
+    - artifact: jboss-eap-7.0.6-patch.zip
       md5: dbb8938a32e4931f8eb4b87c4a63c9e1
 dogen:
     version: 2.0.0
