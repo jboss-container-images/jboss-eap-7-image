@@ -1,4 +1,5 @@
 name: "jboss-eap-7/eap70"
+description: "Red Hat JBoss Enterprise Application Platform 7.0 container image"
 version: "7.0.6"
 from: "jboss/openjdk18-rhel7:1.0"
 user: 185
@@ -12,24 +13,22 @@ labels:
       value: "DEBUG_PORT:8787"
       description: "Environment variable used to specify the debug port. If not set, the default EAP debug port will be used (8787). Only applicable when development mode is enabled."
 envs:
-    information:
-        - name: "LAUNCH_JBOSS_IN_BACKGROUND"
-          value: "true"
-        - name: "JBOSS_PRODUCT"
-          value: "eap"
-        - name: "JBOSS_EAP_VERSION"
-          value: "7.0.6.GA"
-        - name: "PRODUCT_VERSION"
-          value: "7.0.6.GA"
-        - name: "JBOSS_HOME"
-          value: "/opt/eap"
-    configuration:
-        - name: "DEBUG"
-          example: "true"
-          description: "Specify true to enable development mode (debugging)."
-        - name: "DEBUG_PORT"
-          example: "8787"
-          description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
+    - name: "LAUNCH_JBOSS_IN_BACKGROUND"
+      value: "true"
+    - name: "JBOSS_PRODUCT"
+      value: "eap"
+    - name: "JBOSS_EAP_VERSION"
+      value: "7.0.6.GA"
+    - name: "PRODUCT_VERSION"
+      value: "7.0.6.GA"
+    - name: "JBOSS_HOME"
+      value: "/opt/eap"
+    - name: "DEBUG"
+      example: "true"
+      description: "Specify true to enable development mode (debugging)."
+    - name: "DEBUG_PORT"
+      example: "8787"
+      description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
 ports:
     - value: 8080
     - value: 8787
@@ -45,8 +44,9 @@ scripts:
 sources:
     - url: jboss-eap-7.0.0.zip
       md5: cd02482daa0398bf5500e1628d28179a
+      hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=43891&product=appplatform&version=7.0&downloadType=distributions"
       # Based on CR 2
     - url: jboss-eap-7.0.6-patch.zip
       md5: dbb8938a32e4931f8eb4b87c4a63c9e1
 dogen:
-    version: 2.0.0rc16
+    version: 2.0.0
