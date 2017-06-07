@@ -1,4 +1,5 @@
 name: "jboss-eap-7/eap71"
+description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
 version: "7.1.0.Beta"
 from: "jboss/openjdk18-rhel7:1.0"
 user: 185
@@ -12,22 +13,20 @@ labels:
       value: "DEBUG_PORT:8787"
       description: "Environment variable used to specify the debug port. If not set, the default EAP debug port will be used (8787). Only applicable when development mode is enabled."
 envs:
-    information:
-        - name: "LAUNCH_JBOSS_IN_BACKGROUND"
-          value: "true"
-        - name: "JBOSS_PRODUCT"
-          value: "eap"
-        - name: "JBOSS_EAP_VERSION"
-          value: "7.1.0.Beta"
-        - name: "JBOSS_HOME"
-          value: "/opt/eap"
-    configuration:
-        - name: "DEBUG"
-          example: "true"
-          description: "Specify true to enable development mode (debugging)."
-        - name: "DEBUG_PORT"
-          example: "8787"
-          description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
+    - name: "LAUNCH_JBOSS_IN_BACKGROUND"
+      value: "true"
+    - name: "JBOSS_PRODUCT"
+      value: "eap"
+    - name: "JBOSS_EAP_VERSION"
+      value: "7.1.0.Beta"
+    - name: "JBOSS_HOME"
+      value: "/opt/eap"
+    - name: "DEBUG"
+      example: "true"
+      description: "Specify true to enable development mode (debugging)."
+    - name: "DEBUG_PORT"
+      example: "8787"
+      description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
 ports:
     - value: 8080
     - value: 8787
@@ -42,7 +41,7 @@ scripts:
       user: root
 sources:
     # 7.1.0.DR18 (7.1.0.Beta1-redhat-3)
-    - url: jboss-eap-7.1.0.Beta.zip
+    - artifact: jboss-eap-7.1.0.Beta.zip
       md5: b42a26f7d292d4293c37cb6d8d64650e
 dogen:
-    version: 2.0.0rc16
+    version: 2.0.0
