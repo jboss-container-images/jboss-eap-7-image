@@ -40,8 +40,8 @@ scripts:
       exec: install_eap71.sh
       user: root
 sources:
-    # 7.1.0.DR19 (7.1.0.Beta1-redhat-4)
+    # 7.1.0.ER1 (7.1.0.Beta1-redhat-5)
     - artifact: jboss-eap-7.1.0.Beta.zip
-      md5: f27f0178d30ae0013d02dd4b59900d36
+      md5: 2b3da3985441ca578b77eaeaaecd8624
 dogen:
     version: 2.0.0
