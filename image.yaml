@@ -49,4 +49,8 @@ sources:
       md5: dbb8938a32e4931f8eb4b87c4a63c9e1
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=51801&product=appplatform&version=7.0&downloadType=patches"
 dogen:
-    version: 2.0.0
+    version: 2.1.0
+    plugins:
+        dist_git:
+            repo: jboss-eap-7-docker
+            branch: jb-eap70
