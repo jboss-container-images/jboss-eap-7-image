@@ -47,7 +47,6 @@ sources:
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=43891&product=appplatform&version=7.0&downloadType=distributions"
     - artifact: jboss-eap-7.0.7-patch.zip
       md5: 4f7554af9af5382d47095fc3f08a52ff
-      hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=51801&product=appplatform&version=7.0&downloadType=patches"
 dogen:
     version: 2.1.0
     plugins:
