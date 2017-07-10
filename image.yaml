@@ -1,6 +1,6 @@
 name: "jboss-eap-7/eap71"
 description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
-version: "7.1.0.Beta"
+version: "7.1.0.GA"
 from: "jboss/openjdk18-rhel7:1.0"
 user: 185
 labels:
@@ -18,7 +18,7 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.1.0.Beta"
+      value: "7.1.0.GA"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -40,9 +40,9 @@ scripts:
       exec: install_eap71.sh
       user: root
 sources:
-    # 7.1.0.ER1 (7.1.0.Beta1-redhat-5)
-    - artifact: jboss-eap-7.1.0.Beta.zip
-      md5: 2b3da3985441ca578b77eaeaaecd8624
+    # 7.1.0.ER2 (7.1.0.GA-redhat-2)
+    - artifact: jboss-eap-7.1.0.GA.zip
+      md5: 9575a2ac7d803703d1b325d69843936d
 dogen:
     version: 2.1.0
     plugins:
