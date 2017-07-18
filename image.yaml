@@ -19,6 +19,8 @@ envs:
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
       value: "7.1.0.Beta"
+    - name: "PRODUCT_VERSION"
+      value: "7.1.0.Beta"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -40,12 +42,13 @@ scripts:
       exec: install_eap71.sh
       user: root
 sources:
-    # 7.1.0.ER1 (7.1.0.Beta1-redhat-5)
     - artifact: jboss-eap-7.1.0.Beta.zip
       md5: 2b3da3985441ca578b77eaeaaecd8624
+      hint: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=52291&product=appplatform&version=&downloadType=distributions
 dogen:
-    version: 2.1.0
+    version: 2.3.0
     plugins:
         dist_git:
             repo: jboss-eap-7-docker
             branch: jb-eap71
+
