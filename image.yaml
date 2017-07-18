@@ -1,6 +1,6 @@
 name: "jboss-eap-7/eap71"
 description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
-version: "7.1.0.GA"
+version: "7.1.0"
 from: "jboss/openjdk18-rhel7:1.0"
 user: 185
 labels:
@@ -18,6 +18,8 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
+      value: "7.1.0.GA"
+    - name: "PRODUCT_VERSION"
       value: "7.1.0.GA"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
