@@ -1,6 +1,6 @@
 name: "jboss-eap-7/eap70"
 description: "Red Hat JBoss Enterprise Application Platform 7.0 container image"
-version: "7.0.7"
+version: "7.0.8"
 from: "jboss/openjdk18-rhel7:1.0"
 user: 185
 labels:
@@ -18,9 +18,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.0.7.GA"
+      value: "7.0.8.GA"
     - name: "PRODUCT_VERSION"
-      value: "7.0.7.GA"
+      value: "7.0.8.GA"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -45,8 +45,8 @@ sources:
     - artifact: jboss-eap-7.0.0.zip
       md5: cd02482daa0398bf5500e1628d28179a
       hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=43891&product=appplatform&version=7.0&downloadType=distributions"
-    - artifact: jboss-eap-7.0.7-patch.zip
-      md5: 4f7554af9af5382d47095fc3f08a52ff
+    - artifact: jboss-eap-7.0.8-patch.zip
+      md5: daae291155a259e9f1d2255d36866551
 dogen:
     version: 2.1.0
     plugins:
