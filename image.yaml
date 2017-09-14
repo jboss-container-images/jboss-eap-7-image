@@ -46,7 +46,7 @@ sources:
     - artifact: jboss-eap-7.1.0.GA.zip
       md5: 99e0a1a4a83bb7bb7e0d21c95bc7e86d
 dogen:
-    version: 2.4.0
+    version: 2.4.3
     plugins:
         dist_git:
             repo: jboss-eap-7-docker
