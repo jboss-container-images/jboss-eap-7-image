@@ -1,0 +1,5 @@
+schema_version: 1
+
+name: eap-7
+execute:
+    - script: install_eap70.sh
