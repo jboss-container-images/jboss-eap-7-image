@@ -1,8 +1,9 @@
+schema_version: 1
+
 name: "jboss-eap-7/eap71"
 description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
 version: "7.1.0"
 from: "jboss/openjdk18-rhel7:1.0"
-user: 185
 labels:
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
@@ -33,21 +34,20 @@ ports:
     - value: 8080
     - value: 8787
       expose: false
-cmd:
-    - "/opt/eap/bin/standalone.sh"
-    - "-b"
-    - "0.0.0.0"
-scripts:
-    - package: eap-7
-      exec: install_eap71.sh
-      user: root
-sources:
+modules:
+      install:
+          - name: eap-7
+artifacts:
     # 7.1.0.ER3 (7.1.0.GA-redhat-4)
-    - artifact: jboss-eap-7.1.0.GA.zip
+    - path: jboss-eap-7.1.0.GA.zip
       md5: 99e0a1a4a83bb7bb7e0d21c95bc7e86d
-dogen:
-    version: 2.4.3
-    plugins:
-        dist_git:
-            repo: jboss-eap-7-docker
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/standalone.sh"
+          - "-b"
+          - "0.0.0.0"
+osbs:
+      repository:
+            name: jboss-eap-7-docker
             branch: jb-eap71
