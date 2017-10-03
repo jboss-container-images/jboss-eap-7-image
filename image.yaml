@@ -1,8 +1,9 @@
+schema_version: 1
+
 name: "jboss-eap-7/eap70"
 description: "Red Hat JBoss Enterprise Application Platform 7.0 container image"
 version: "7.0.8"
 from: "jboss/openjdk18-rhel7:1.0"
-user: 185
 labels:
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
@@ -33,23 +34,22 @@ ports:
     - value: 8080
     - value: 8787
       expose: false
-cmd:
-    - "/opt/eap/bin/standalone.sh"
-    - "-b"
-    - "0.0.0.0"
-scripts:
-    - package: eap-7
-      exec: install_eap70.sh
-      user: root
-sources:
-    - artifact: jboss-eap-7.0.0.zip
+modules:
+      install:
+          - name: eap-7
+artifacts:
+    - path: jboss-eap-7.0.0.zip
+      description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=43891&product=appplatform&version=7.0&downloadType=distributions"
       md5: cd02482daa0398bf5500e1628d28179a
-      hint: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=43891&product=appplatform&version=7.0&downloadType=distributions"
-    - artifact: jboss-eap-7.0.8-patch.zip
+    - path: jboss-eap-7.0.8-patch.zip
       md5: daae291155a259e9f1d2255d36866551
-dogen:
-    version: 2.4.0
-    plugins:
-        dist_git:
-            repo: jboss-eap-7-docker
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/standalone.sh"
+          - "-b"
+          - "0.0.0.0"
+osbs:
+      repository:
+            name: jboss-eap-7-docker
             branch: jb-eap70
