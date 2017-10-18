@@ -44,9 +44,9 @@ modules:
       install:
           - name: eap-7
 artifacts:
-    # 7.1.0.CR2 (7.1.0.GA-redhat-7)
+    # 7.1.0.CR3 (7.1.0.GA-redhat-8)
     - path: jboss-eap-7.1.0.GA.zip
-      md5: 0b028571f1637c2321214b7059bc2508
+      md5: 8244d4b64ad0017b13a4c1ab3301780d
 run:
       user: 185
       cmd:
