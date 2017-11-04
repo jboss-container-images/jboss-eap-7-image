@@ -3,7 +3,7 @@ schema_version: 1
 name: "jboss-eap-7/eap70"
 description: "Red Hat JBoss Enterprise Application Platform 7.0 container image"
 version: "7.0.8"
-from: "jboss/openjdk18-rhel7:1.0"
+from: "jboss/openjdk18-rhel7:1.1"
 labels:
     - name: "org.jboss.product"
       value: "eap"
