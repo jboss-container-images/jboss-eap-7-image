@@ -50,7 +50,7 @@ artifacts:
       description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=43891&product=appplatform&version=7.0&downloadType=distributions"
       md5: cd02482daa0398bf5500e1628d28179a
     - path: jboss-eap-7.0.9-patch.zip
-      md5: 3a6f3add70454d6aa7e45ac8dc280a18
+      md5: 865d6a72835a7b454482e231d09efc05
 run:
       user: 185
       cmd:
