@@ -59,3 +59,4 @@ osbs:
       repository:
             name: jboss-eap-7-docker
             branch: jb-eap71
+
