@@ -3,7 +3,7 @@
 set -e
 
 SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-7.1.0.Beta.zip"
+DISTRIBUTION_ZIP="jboss-eap-7.1.0.GA.zip"
 EAP_VERSION="7.1"
 
 unzip -q $SOURCES_DIR/$DISTRIBUTION_ZIP

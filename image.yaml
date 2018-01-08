@@ -1,9 +1,16 @@
+schema_version: 1
+
 name: "jboss-eap-7/eap71"
 description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
-version: "7.1.0.Beta"
-from: "jboss/openjdk18-rhel7:1.0"
-user: 185
+version: "7.1.0"
+from: "jboss/openjdk18-rhel7:1.1"
 labels:
+    - name: "org.jboss.product"
+      value: "eap"
+    - name: "org.jboss.product.version"
+      value: "7.1.0.GA"
+    - name: "org.jboss.product.eap.version"
+      value: "7.1.0.GA"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -18,9 +25,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.1.0.Beta"
+      value: "7.1.0.GA"
     - name: "PRODUCT_VERSION"
-      value: "7.1.0.Beta"
+      value: "7.1.0.GA"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -33,22 +40,23 @@ ports:
     - value: 8080
     - value: 8787
       expose: false
-cmd:
-    - "/opt/eap/bin/standalone.sh"
-    - "-b"
-    - "0.0.0.0"
-scripts:
-    - package: eap-7
-      exec: install_eap71.sh
-      user: root
-sources:
-    - artifact: jboss-eap-7.1.0.Beta.zip
-      md5: 2b3da3985441ca578b77eaeaaecd8624
-      hint: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=52291&product=appplatform&version=&downloadType=distributions
-dogen:
-    version: 2.3.0
-    plugins:
-        dist_git:
-            repo: jboss-eap-7-docker
+modules:
+      repositories:
+          - path: modules
+      install:
+          - name: eap-7
+artifacts:
+    # 7.1.0.CR4 (7.1.0.GA-redhat-11)
+    - path: jboss-eap-7.1.0.GA.zip
+      md5: 9f608e6603a8db05316e6effd5440fca
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/standalone.sh"
+          - "-b"
+          - "0.0.0.0"
+osbs:
+      repository:
+            name: jboss-eap-7-docker
             branch: jb-eap71
 
