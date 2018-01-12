@@ -3,8 +3,8 @@
 set -e
 
 SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-7.1.0.GA.zip"
-EAP_VERSION="7.1"
+DISTRIBUTION_ZIP="jboss-eap-7.2.0.Alpha.zip"
+EAP_VERSION="7.2"
 
 unzip -q $SOURCES_DIR/$DISTRIBUTION_ZIP
 mv jboss-eap-$EAP_VERSION $JBOSS_HOME
