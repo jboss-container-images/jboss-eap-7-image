@@ -2,4 +2,4 @@ schema_version: 1
 
 name: eap-7
 execute:
-    - script: install_eap71.sh
+    - script: install_eap72.sh
