@@ -46,9 +46,9 @@ modules:
       install:
           - name: eap-7
 artifacts:
-    # 7.2.0.EL12 (7.2.0.Alpha1-redhat-20180112_1212)
+    # 7.2.0.EL12 (7.2.0.Alpha1-redhat-20180115_1616)
     - path: jboss-eap-7.2.0.Alpha.zip
-      md5: e0527752a64acf0f36ef8e56191c6fcf
+      md5: 02f59bbf43c8f5e80b38dd29af25e2f8
 run:
       user: 185
       cmd:
