@@ -1,0 +1,5 @@
+schema_version: 1
+
+name: eap-live
+execute:
+    - script: install_eap_live.sh

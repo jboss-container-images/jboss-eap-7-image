@@ -3,8 +3,10 @@
 set -e
 
 SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-7.1.0.GA.zip"
-EAP_VERSION="7.1"
+# // TODO: naming
+DISTRIBUTION_ZIP="jboss-eap-live-12.zip"
+EAP_VERSION="7.2"
+EAP_LIVE_VERSION="12"
 
 unzip -q $SOURCES_DIR/$DISTRIBUTION_ZIP
 mv jboss-eap-$EAP_VERSION $JBOSS_HOME

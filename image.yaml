@@ -1,16 +1,16 @@
 schema_version: 1
 
-name: "jboss-eap-7/eap71"
-description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
-version: "7.1.0"
+name: "jboss-eap-7-tech-preview/eap72-el12-openshift"
+description: "EAP 7.2 EL releases are intended to be Technology Preview - The JBoss EAP 7.2 EL12 OpenShift container image is provided as technology preview. It is intended for development use only. It should NOT be deployed on production or in environments that are not intended for development use."
+version: "1.0"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
     - name: "org.jboss.product"
       value: "eap"
     - name: "org.jboss.product.version"
-      value: "7.1.0.GA"
+      value: "7.2.0.EL"
     - name: "org.jboss.product.eap.version"
-      value: "7.1.0.GA"
+      value: "7.2.0.EL"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -25,9 +25,11 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.1.0.GA"
+      value: "7.2.0.EL"
+    - name: "JBOSS_EAP_LIVE_VERSION"
+      value: "12"
     - name: "PRODUCT_VERSION"
-      value: "7.1.0.GA"
+      value: "EL12"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -44,11 +46,10 @@ modules:
       repositories:
           - path: modules
       install:
-          - name: eap-7
+          - name: eap-live
 artifacts:
-    # 7.1.0.CR4 (7.1.0.GA-redhat-11)
-    - path: jboss-eap-7.1.0.GA.zip
-      md5: 9f608e6603a8db05316e6effd5440fca
+    - path: jboss-eap-live-12.zip
+      md5:  677d3a6b2fea10648cecc5ac002c34cd
 run:
       user: 185
       cmd:
@@ -57,5 +58,6 @@ run:
           - "0.0.0.0"
 osbs:
       repository:
-            name: jboss-eap-7-docker
-            branch: jb-eap-7.1-rhel-7
+            name: jboss-eap-7-tech-preview
+            branch: jb-eap-el12
+
