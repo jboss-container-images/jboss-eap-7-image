@@ -1,6 +1,6 @@
 schema_version: 1
 
-name: "jboss-eap-7-tech-preview/eap72-el12-openshift"
+name: "jboss-eap-7-tech-preview/eap72-el12"
 description: "EAP 7.2 EL releases are intended to be Technology Preview - The JBoss EAP 7.2 EL12 OpenShift container image is provided as technology preview. It is intended for development use only. It should NOT be deployed on production or in environments that are not intended for development use."
 version: "1.0"
 from: "jboss/openjdk18-rhel7:1.1"
@@ -58,6 +58,6 @@ run:
           - "0.0.0.0"
 osbs:
       repository:
-            name: jboss-eap-7-tech-preview
-            branch: jb-eap-el12
+            name: jboss-eap-7-container-tech-preview
+            branch: jb-eap72-el12
 
