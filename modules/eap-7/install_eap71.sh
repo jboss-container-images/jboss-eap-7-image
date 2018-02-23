@@ -9,6 +9,8 @@ EAP_VERSION="7.1"
 unzip -q $SOURCES_DIR/$DISTRIBUTION_ZIP
 mv jboss-eap-$EAP_VERSION $JBOSS_HOME
 
+$JBOSS_HOME/bin/jboss-cli.sh -Dorg.wildfly.patching.jar.invalidation=true --command="patch apply $SOURCES_DIR/jboss-eap-7.1.1-patch.zip"
+
 function remove_scrapped_jars {
   find $JBOSS_HOME -name \*.jar.patched -printf "%h\n" | sort | uniq | xargs rm -rv
 }
@@ -49,7 +51,7 @@ function aggregate_patched_modules {
   rm -rf /tmp/standalone
 }
 
-# No patches for now
-## aggregate_patched_modules
-## remove_scrapped_jars
+
+aggregate_patched_modules
+remove_scrapped_jars
 update_permissions
