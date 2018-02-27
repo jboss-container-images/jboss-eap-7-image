@@ -48,8 +48,8 @@ modules:
       install:
           - name: eap-live
 artifacts:
-    - path: jboss-eap-live-12.zip
-      md5:  677d3a6b2fea10648cecc5ac002c34cd
+    - path: jboss-eap-7.2.0.EL12.ER1.zip
+      md5:  88668fb04d7d2e5dba94e87cf3f22f47
 run:
       user: 185
       cmd:
