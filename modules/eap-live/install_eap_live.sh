@@ -4,7 +4,7 @@ set -e
 
 SOURCES_DIR=/tmp/artifacts/
 # // TODO: naming
-DISTRIBUTION_ZIP="jboss-eap-7.2.0.EL12.ER1.zip"
+DISTRIBUTION_ZIP="jboss-eap-7.2.0.EL12.CR1-20180228.zip"
 EAP_VERSION="7.2"
 EAP_LIVE_VERSION="12"
 
