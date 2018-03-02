@@ -1,16 +1,16 @@
 schema_version: 1
 
-name: "jboss-eap-7-tech-preview/eap72-el12"
-description: "EAP 7.2 EL releases are intended to be Technology Preview - The JBoss EAP 7.2 EL12 OpenShift container image is provided as technology preview. It is intended for development use only. It should NOT be deployed on production or in environments that are not intended for development use."
-version: "1.0"
+name: "jboss-eap-7/eap72-online"
+description: "Red Hat JBoss Enterprise Application Platform Online releases are intended to be Technology Preview - The JBoss EAP Online OpenShift container image is provided as technology preview. It is intended for development use only. It should NOT be deployed on production or in environments that are not intended for development use."
+version: "12.0"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
     - name: "org.jboss.product"
       value: "eap"
     - name: "org.jboss.product.version"
-      value: "7.2.0.EL"
+      value: "7.2.0"
     - name: "org.jboss.product.eap.version"
-      value: "7.2.0.EL"
+      value: "7.2.0"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -25,11 +25,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.2.0.EL"
-    - name: "JBOSS_EAP_LIVE_VERSION"
-      value: "12"
+      value: "7.2.0-online"
     - name: "PRODUCT_VERSION"
-      value: "EL12"
+      value: "12.0"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -46,7 +44,7 @@ modules:
       repositories:
           - path: modules
       install:
-          - name: eap-live
+          - name: eap-online
 artifacts:
     - path: jboss-eap-7.2.0.EL12.CR1-20180228.zip
       md5:  5d4de36a82f72b42af8c5d65027ce7eb
@@ -59,5 +57,5 @@ run:
 osbs:
       repository:
             name: jboss-eap-7-container-tech-preview
-            branch: jb-eap72-el12
+            branch: eap72-online
 

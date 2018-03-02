@@ -1,0 +1,5 @@
+schema_version: 1
+
+name: eap-online
+execute:
+    - script: install_eap.sh
