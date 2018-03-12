@@ -46,8 +46,8 @@ modules:
       install:
           - name: eap-online
 artifacts:
-    - path: jboss-eap-7.2.0.EL12.CR1-20180228.zip
-      md5:  5d4de36a82f72b42af8c5d65027ce7eb
+    - path: jboss-eap-7.2.0.EO12.CR1-20180306.zip
+      md5:  ac23048f55dee491a7fbd823d72fbddb
 run:
       user: 185
       cmd:
