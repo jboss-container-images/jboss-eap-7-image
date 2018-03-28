@@ -6,3 +6,4 @@ NOTE: Extends link:https://github.com/jboss-container-images/jboss-openjdk-image
 
 See link:LICENSE[LICENSE] file.
 
+
