@@ -1,16 +1,18 @@
 schema_version: 1
 
-name: "jboss-eap-7/eap72"
-description: "Red Hat JBoss Enterprise Application Platform 7.2 container image"
-version: "7.2.0"
+name: "jboss-eap-7/eap-cd"
+description: "The JBoss EAP continuous delivery (JBoss EAP CD) releases are intended to be Technology Preview - The JBoss EAP CD OpenShift container image is provided as technology preview. It is intended for development use only. It should NOT be deployed on production or in environments that are not intended for development use."
+version: "13.0"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
+    - name: "com.redhat.component"
+      value: "jboss-eap-7-eap-cd-container"
     - name: "org.jboss.product"
       value: "eap"
     - name: "org.jboss.product.version"
-      value: "7.2.0.Alpha"
+      value: "7.2.0"
     - name: "org.jboss.product.eap.version"
-      value: "7.2.0.Alpha"
+      value: "7.2.0"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -25,9 +27,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.2.0.Alpha"
+      value: "7.2.0-cd"
     - name: "PRODUCT_VERSION"
-      value: "7.2.0.Alpha"
+      value: "13.0"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -42,13 +44,12 @@ ports:
       expose: false
 modules:
       repositories:
-          - path: modules
+          - name: jboss-eap-modules
+            git:
+                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
+                  ref: master
       install:
-          - name: eap-7
-artifacts:
-    # 7.2.0.EL12 (7.2.0.Alpha1-redhat-20180115_1616)
-    - path: jboss-eap-7.2.0.Alpha.zip
-      md5: 02f59bbf43c8f5e80b38dd29af25e2f8
+          - name: jboss.eap.cd.base.installer
 run:
       user: 185
       cmd:
@@ -57,6 +58,5 @@ run:
           - "0.0.0.0"
 osbs:
       repository:
-            name: jboss-eap-7-docker
-            branch: jb-eap72
-
+            name: containers/jboss-eap-7
+            branch: jb-eap-7.2-cd-rhel-7

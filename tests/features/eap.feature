@@ -1,4 +1,4 @@
-@jboss-eap-7/eap72
+@jboss-eap-7/eap-cd
 Feature: Standalone common EAP tests
 
   Scenario: Check that dotfiles are properly extracted to $JBOSS_HOME (CLOUD-31)
