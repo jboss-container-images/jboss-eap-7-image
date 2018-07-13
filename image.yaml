@@ -44,12 +44,17 @@ ports:
       expose: false
 modules:
       repositories:
-          - name: jboss-eap-modules
-            git:
-                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: master
+          - path: modules
       install:
           - name: jboss.eap.cd.base.installer
+
+# note: these should be overridden in the corresponding -override.yaml files.
+# and build with concreate / cekit --overrides=dev-overrides.yaml etc
+artifacts:
+    - name: jboss-eap-cd.zip
+      path: jboss-eap-7.2.0.CD13.CR2.zip
+      sha256: 080d0ec6cbb8c4a30d7ce771f7022fc3882830169297fe567bcbed3f9767ace8
+
 run:
       user: 185
       cmd:

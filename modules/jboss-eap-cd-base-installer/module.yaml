@@ -1,0 +1,6 @@
+schema_version: 1
+
+name: jboss.eap.cd.base.installer
+execute:
+    - script: install_eap.sh
+

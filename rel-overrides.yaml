@@ -1,10 +1,24 @@
 schema_version: 1
-modules:
-      repositories:
-          - name: jboss-eap-modules
-            git:
-                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: master
+
+# Example artifact image.yaml overrides:
+# concreate --overrides=<filenaame.yaml>
+# cekit build --overrides-file overrides.yaml
+# files should be place in target/image, or an absolute path specified.
+
+# note in both examples below the target file will be renamed to jboss-eap-cd.zip
+# in target/image as that is the filename expected by the install script.
+
+# WildFly:
+#artifacts:
+#    - name: jboss-eap-cd.zip
+#      path: wildfly-14.0.0.Beta1-SNAPSHOT.zip
+
+# EAP CD:
+# artifacts:
+#    - name: jboss-eap-cd.zip
+#      path: jboss-eap-7.2.0.CD13.CR2.zip
+#      sha256: 080d0ec6cbb8c4a30d7ce771f7022fc3882830169297fe567bcbed3f9767ace8
+
 osbs:
       repository:
             name: containers/jboss-eap-7
