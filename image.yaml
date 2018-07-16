@@ -2,7 +2,7 @@ schema_version: 1
 
 name: "jboss-eap-7/eap72"
 description: "Red Hat JBoss Enterprise Application Platform 7.2 container image"
-version: "7.2.0"
+version: "7.2.0.Beta"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
     - name: "com.redhat.component"
@@ -47,6 +47,12 @@ modules:
           - path: modules
       install:
           - name: jboss.eap.72.base.installer
+# note: these should be overridden in the corresponding -override.yaml files.
+# and built with concreate / cekit --overrides=dev-overrides.yaml etc
+artifacts:
+    - name: jboss-eap-7.2.zip
+      path: jboss-eap-7.2.0.CD13.CR2.zip
+      sha256: 080d0ec6cbb8c4a30d7ce771f7022fc3882830169297fe567bcbed3f9767ace8
 run:
       user: 185
       cmd:
