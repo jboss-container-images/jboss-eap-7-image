@@ -1,4 +1,4 @@
-JBoss Enterprise Application Platform continuous delivery container image
+#JBoss Enterprise Application Platform continuous delivery container image
 
 NOTE: Extends link:https://github.com/jboss-container-images/jboss-openjdk-image[JBoss OpenJDK image]
 
