@@ -1,13 +1,7 @@
 schema_version: 1
-modules:
 
-# Example artifact image.yaml overrides:
-# concreate --overrides=<filenaame.yaml>
-# cekit build --overrides-file overrides.yaml
-# files should be place in target/image, or an absolute path specified.
-
-# note in the example below the target file will be renamed to jboss-eap-cd.zip
-# in target/image as that is the filename expected by the install script.
+# cp-overrides.yaml
+# see dev-overrides.yaml for more information
 
 #artifacts:
 #    - name: jboss-eap-cd.zip
