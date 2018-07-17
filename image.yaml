@@ -49,7 +49,7 @@ modules:
           - name: jboss.eap.cd.base.installer
 
 # note: these should be overridden in the corresponding -override.yaml files.
-# and build with concreate / cekit --overrides=dev-overrides.yaml etc
+# and built with concreate / cekit --overrides=dev-overrides.yaml etc
 artifacts:
     - name: jboss-eap-cd.zip
       path: jboss-eap-7.2.0.CD13.CR2.zip
