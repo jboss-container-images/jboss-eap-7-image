@@ -47,12 +47,14 @@ modules:
           - path: modules
       install:
           - name: jboss.eap.72.base.installer
+
 # note: these should be overridden in the corresponding -override.yaml files.
 # and built with concreate / cekit --overrides=dev-overrides.yaml etc
 artifacts:
     - name: jboss-eap-7.2.zip
       path: jboss-eap-7.2.0.Beta.CR2.zip
       sha256: 28b54f7e23966b3a8901b37e18c09f0fe09630697501b90fea5596e3345bd9cf
+
 run:
       user: 185
       cmd:

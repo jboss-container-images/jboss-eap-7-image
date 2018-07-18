@@ -20,7 +20,7 @@ schema_version: 1
 # artifacts:
 #    - name: jboss-eap-cd.zip
 #      path: /some/path/to/git/wildfly/dist/target/wildfly-14.0.0.Beta1-SNAPSHOT.zip
-
+#
 # EAP:
 #artifacts:
 #    - name: jboss-eap-7.2.zip
@@ -28,6 +28,7 @@ schema_version: 1
 #      sha256: 28b54f7e23966b3a8901b37e18c09f0fe09630697501b90fea5596e3345bd9cf
 # hash values are optional, but when building for release, *must* be provided.
 
+# below is used when building images for release
 osbs:
       repository:
             name: containers/jboss-eap-7
