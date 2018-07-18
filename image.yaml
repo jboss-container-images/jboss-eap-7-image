@@ -51,8 +51,8 @@ modules:
 # and built with concreate / cekit --overrides=dev-overrides.yaml etc
 artifacts:
     - name: jboss-eap-7.2.zip
-      path: jboss-eap-7.2.0.CD13.CR2.zip
-      sha256: 080d0ec6cbb8c4a30d7ce771f7022fc3882830169297fe567bcbed3f9767ace8
+      path: jboss-eap-7.2.0.Beta-20180718.zip
+      sha256: 9d3296d5e3cbe606b9aac3f805603d8ef0f397167d811a252faf2af1d429c73c
 run:
       user: 185
       cmd:
