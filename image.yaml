@@ -47,7 +47,7 @@ modules:
           - name: jboss-eap-modules
             git:
                   url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: sprint-16
+                  ref: master
       install:
           - name: jboss.eap.cd.base.installer
 
