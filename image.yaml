@@ -2,7 +2,7 @@ schema_version: 1
 
 name: "jboss-eap-7/eap71"
 description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
-version: "7.1.3"
+version: "7.1.4"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
     - name: "com.redhat.component"
@@ -10,9 +10,9 @@ labels:
     - name: "org.jboss.product"
       value: "eap"
     - name: "org.jboss.product.version"
-      value: "7.1.3.GA"
+      value: "7.1.4.GA"
     - name: "org.jboss.product.eap.version"
-      value: "7.1.3.GA"
+      value: "7.1.4.GA"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -27,9 +27,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.1.3.GA"
+      value: "7.1.4.GA"
     - name: "PRODUCT_VERSION"
-      value: "7.1.3.GA"
+      value: "7.1.4.GA"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -51,8 +51,8 @@ artifacts:
     # 7.1.0.CR4 (7.1.0.GA-redhat-11)
     - path: jboss-eap-7.1.0.GA.zip
       md5: 9f608e6603a8db05316e6effd5440fca
-    - path: jboss-eap-7.1.3-patch.zip
-      md5: 61f367acf0e1dd11703fa90daefcee3a
+    - path: jboss-eap-7.1.4-patch.zip
+      md5: fbea6500a9f486e8bb251db1046ed62b
 
 run:
       user: 185
