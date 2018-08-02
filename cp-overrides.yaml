@@ -6,8 +6,8 @@ schema_version: 1
 #
 # artifacts:
 #    - name: jboss-eap-7.2.zip
-#      path: jboss-eap-7.2.0.Beta.CR1.zip
-#      sha256: 019b23232c1a7d4386b00ede209e58f7de3f9e1e8d3f47da69e3ace9afe9acca
+#      path: jboss-eap-7.2.0.Beta.CR2.zip
+#      sha256: 28b54f7e23966b3a8901b37e18c09f0fe09630697501b90fea5596e3345bd9cf
 
 osbs:
       repository:
