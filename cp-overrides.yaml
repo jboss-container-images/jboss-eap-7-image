@@ -1,5 +1,6 @@
 schema_version: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # cp-overrides.yaml
 # see dev-overrides.yaml for more information
@@ -14,6 +15,10 @@ modules:
             git:
                   url: https://github.com/jboss-container-images/jboss-eap-modules.git
                   ref: sprint-20
+
+labels:
+    - name: "PRODUCT_VERSION"
+      value: "13.0-SP01"
 
 artifacts:
     - name: jboss-eap-cd.zip
