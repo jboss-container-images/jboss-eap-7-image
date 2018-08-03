@@ -1,10 +1,21 @@
 schema_version: 1
+
 modules:
       repositories:
           - name: jboss-eap-modules
             git:
                   url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: master
+                  ref: sprint-20
+
+labels:
+    - name: "PRODUCT_VERSION"
+      value: "13.0-SP01"
+
+artifacts:
+    - name: jboss-eap-cd.zip
+      path: jboss-eap-7.2.0.CD13-SP01.CR1.zip
+      sha256: fe68734c33312917c5310bf41495ff45509f974ed9c3a1cc7c23271325de1727
+
 osbs:
       repository:
             name: containers/jboss-eap-7
