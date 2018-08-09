@@ -3,11 +3,12 @@
 set -e
 
 SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-7.2.0.Alpha.zip"
-EAP_VERSION="7.2"
+DISTRIBUTION_ZIP="jboss-eap-7.2.zip"
 
-unzip -q $SOURCES_DIR/$DISTRIBUTION_ZIP
-mv jboss-eap-$EAP_VERSION $JBOSS_HOME
+unzip -d $SOURCES_DIR/eap-dist -q $SOURCES_DIR/$DISTRIBUTION_ZIP
+DIST_NAME=`ls $SOURCES_DIR/eap-dist`
+
+mv $SOURCES_DIR/eap-dist/$DIST_NAME $JBOSS_HOME
 
 function remove_scrapped_jars {
   find $JBOSS_HOME -name \*.jar.patched -printf "%h\n" | sort | uniq | xargs rm -rv

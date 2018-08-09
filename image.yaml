@@ -5,12 +5,14 @@ description: "Red Hat JBoss Enterprise Application Platform 7.2 container image"
 version: "7.2.0"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
+    - name: "com.redhat.component"
+      value: "jboss-eap-7-eap72-container"
     - name: "org.jboss.product"
       value: "eap"
     - name: "org.jboss.product.version"
-      value: "7.2.0.Alpha"
+      value: "7.2.0.Beta"
     - name: "org.jboss.product.eap.version"
-      value: "7.2.0.Alpha"
+      value: "7.2.0.Beta"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -25,9 +27,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.2.0.Alpha"
+      value: "7.2.0.Beta"
     - name: "PRODUCT_VERSION"
-      value: "7.2.0.Alpha"
+      value: "7.2.0.Beta"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -44,11 +46,13 @@ modules:
       repositories:
           - path: modules
       install:
-          - name: eap-7
+          - name: jboss.eap.72.base.installer
+# note: these should be overridden in the corresponding -override.yaml files.
+# and built with concreate / cekit --overrides=dev-overrides.yaml etc
 artifacts:
-    # 7.2.0.EL12 (7.2.0.Alpha1-redhat-20180115_1616)
-    - path: jboss-eap-7.2.0.Alpha.zip
-      md5: 02f59bbf43c8f5e80b38dd29af25e2f8
+    - name: jboss-eap-7.2.zip
+      path: jboss-eap-7.2.0.Beta.CR2.zip
+      sha256: 28b54f7e23966b3a8901b37e18c09f0fe09630697501b90fea5596e3345bd9cf
 run:
       user: 185
       cmd:
@@ -57,6 +61,5 @@ run:
           - "0.0.0.0"
 osbs:
       repository:
-            name: jboss-eap-7-docker
-            branch: jb-eap72
-
+            name: containers/jboss-eap-7
+            branch: jb-eap-7.2-rhel-7

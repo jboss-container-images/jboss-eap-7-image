@@ -1,0 +1,35 @@
+schema_version: 1
+
+# dev-overrides.yaml
+
+# Example artifact image.yaml overrides:
+# concreate --overrides=dev-overrides.yaml
+# cekit build --overrides-file dev-overrides.yaml
+#
+# During image building, files that do not specify an absolute path, or URL are expected to be found
+# in the directory target/image/ in the current build directory. You may copy files directly into this directory,
+# or provide absolute paths to the source files, and the build process will copy them to this location.
+#
+# If you provide a hash value, and the file is not found locally, the configured caching service will be queried
+# for a matching artifact (see ~/.concreate or ~/.cekit for the configured cache location.)
+#
+# Note in both examples below the target file will be renamed to jboss-eap-cd.zip
+# in target/image as that is the filename expected by the EAP install script.
+#
+# WildFly:
+# artifacts:
+#    - name: jboss-eap-cd.zip
+#      path: /some/path/to/git/wildfly/dist/target/wildfly-14.0.0.Beta1-SNAPSHOT.zip
+
+# EAP:
+#artifacts:
+#    - name: jboss-eap-7.2.zip
+#      path: jboss-eap-7.2.0.Beta.CR2.zip
+#      sha256: 28b54f7e23966b3a8901b37e18c09f0fe09630697501b90fea5596e3345bd9cf
+# hash values are optional, but when building for release, *must* be provided.
+
+osbs:
+      repository:
+            name: containers/jboss-eap-7
+            branch: jb-eap-7.2-dev-rhel-7
+
