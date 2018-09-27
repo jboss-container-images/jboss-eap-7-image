@@ -9,7 +9,7 @@ EAP_VERSION="7.1"
 unzip -q $SOURCES_DIR/$DISTRIBUTION_ZIP
 mv jboss-eap-$EAP_VERSION $JBOSS_HOME
 
-$JBOSS_HOME/bin/jboss-cli.sh -Dorg.wildfly.patching.jar.invalidation=true --command="patch apply $SOURCES_DIR/jboss-eap-7.1.4-patch.zip"
+$JBOSS_HOME/bin/jboss-cli.sh -Dorg.wildfly.patching.jar.invalidation=true --command="patch apply $SOURCES_DIR/jboss-eap-7.1.5-patch.zip"
 
 function remove_scrapped_jars {
   find $JBOSS_HOME -name \*.jar.patched -printf "%h\n" | sort | uniq | xargs rm -rv
