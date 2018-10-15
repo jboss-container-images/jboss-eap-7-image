@@ -52,7 +52,7 @@ artifacts:
     - path: jboss-eap-7.1.0.GA.zip
       md5: 9f608e6603a8db05316e6effd5440fca
     - path: jboss-eap-7.1.5-patch.zip
-      md5: 5f8967bf8994bcca56b239024751d757
+      md5: e7d0b29faaa4eeaef528fe8b8b0eb0c4
 
 run:
       user: 185
