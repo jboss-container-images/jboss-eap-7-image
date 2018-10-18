@@ -10,9 +10,9 @@ labels:
     - name: "org.jboss.product"
       value: "eap"
     - name: "org.jboss.product.version"
-      value: "7.2.0.Beta"
+      value: "7.2.0.GA"
     - name: "org.jboss.product.eap.version"
-      value: "7.2.0.Beta"
+      value: "7.2.0.GA"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -27,9 +27,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.2.0.Beta"
+      value: "7.2.0.GA"
     - name: "PRODUCT_VERSION"
-      value: "7.2.0.Beta"
+      value: "7.2.0.GA"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -52,8 +52,8 @@ modules:
 # and built with concreate / cekit --overrides=dev-overrides.yaml etc
 artifacts:
     - name: jboss-eap-7.2.zip
-      path: jboss-eap-7.2.0.Beta.CR2.zip
-      sha256: 28b54f7e23966b3a8901b37e18c09f0fe09630697501b90fea5596e3345bd9cf
+      path: jboss-eap-7.2.0.GA.CR1.zip
+      sha256: 2eb155d4f5673215327ff0398c32f08faab9dc78cf7ceb1a0fe09613303e6bba
 
 run:
       user: 185
