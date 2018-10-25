@@ -2,16 +2,11 @@
 
 set -e
 
-SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-7.2.zip"
-
-unzip -d $SOURCES_DIR/eap-dist -q $SOURCES_DIR/$DISTRIBUTION_ZIP
-DIST_NAME=`ls $SOURCES_DIR/eap-dist`
-
-mv $SOURCES_DIR/eap-dist/$DIST_NAME $JBOSS_HOME
-
 function remove_scrapped_jars {
-  find $JBOSS_HOME -name \*.jar.patched -printf "%h\n" | sort | uniq | xargs rm -rv
+  local patched=$(find $JBOSS_HOME -name \*.jar.patched -printf "%h\n")
+  if [ -n "$patched" ]; then
+    echo "$patched" | sort | uniq | xargs rm -rv
+  fi
 }
 
 function update_permissions {
@@ -23,6 +18,11 @@ function update_permissions {
 function aggregate_patched_modules {
   export JBOSS_PIDFILE=/tmp/jboss.pid
   cp -r $JBOSS_HOME/standalone /tmp/
+
+  local sys_pkgs="$JBOSS_MODULES_SYSTEM_PKGS"
+  if [ -n "$sys_pkgs" ]; then
+    export JBOSS_MODULES_SYSTEM_PKGS=""
+  fi
 
   $JBOSS_HOME/bin/standalone.sh --admin-only -Djboss.server.base.dir=/tmp/standalone &
 
@@ -48,9 +48,12 @@ function aggregate_patched_modules {
   fi
 
   rm -rf /tmp/standalone
+
+  if [ -n "$sys_pkgs" ]; then
+    export JBOSS_MODULES_SYSTEM_PKGS="${sys_pkgs}"
+  fi
 }
 
-# No patches for now
-## aggregate_patched_modules
-## remove_scrapped_jars
+aggregate_patched_modules
+remove_scrapped_jars
 update_permissions
