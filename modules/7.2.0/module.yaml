@@ -43,8 +43,8 @@ ports:
 # and built with concreate / cekit --overrides=dev-overrides.yaml etc
 artifacts:
     - name: jboss-eap-7.2.zip
-      path: jboss-eap-7.2.0.GA.CR1-20181128.zip
-      sha256: f50f69519f19933fa7713f69704367ffeaa0f03727254a2ff7ced559f6a7a8f6
+      path: jboss-eap-7.2.0.GA.CR2.zip
+      sha256: 5bb0c78d9f7a6e8159472155d85359908c5d68463811061159cfc0a8e0ae8d70
 
 run:
       user: 185
