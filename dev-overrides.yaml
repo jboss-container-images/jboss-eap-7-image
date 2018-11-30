@@ -30,8 +30,6 @@ schema_version: 1
 
 # below is used when building images for release
 osbs:
-  configuration:
-    container_file: container.yaml
   repository:
     name: containers/jboss-eap-7
     branch: jb-eap-7.2-dev-rhel-7
