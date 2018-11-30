@@ -9,10 +9,7 @@ labels:
       value: "jboss-eap-7-eap72-container"
 
 packages:
-      repositories:
-          - name: jboss-os
-            id: rhel-7-server-rpms
-          - jboss-os
+  content_sets_file: content_sets.yml
 
 modules:
       repositories:
