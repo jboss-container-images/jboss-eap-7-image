@@ -10,8 +10,9 @@ labels:
 
 packages:
       repositories:
-          - name: base
+          - name: jboss-os
             id: rhel-7-server-rpms
+          - jboss-os
 
 modules:
       repositories:
