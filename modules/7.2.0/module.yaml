@@ -44,8 +44,7 @@ ports:
 artifacts:
     - name: jboss-eap-7.2.zip
       path: jboss-eap-7.2.0.GA.CR2.zip
-      sha256: 5bb0c78d9f7a6e8159472155d85359908c5d68463811061159cfc0a8e0ae8d70
-
+      sha256: bfe109139bea8004a7eae5cd6e9d87250c4eb9e6bec20ed423822e9c6fa9c016
 run:
       user: 185
       cmd:
