@@ -1,0 +1,8 @@
+schema_version: 1
+
+name: eap-cd-latest
+description: "Red Hat JBoss Enterprise Application Platform CD latest version install module"
+modules:
+      install:
+          - name: eap-cd-14
+          - name: eap-install-cleanup
