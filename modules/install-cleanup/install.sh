@@ -48,10 +48,6 @@ function aggregate_patched_modules {
   fi
 
   rm -rf /tmp/standalone
-
-  if [ -n "$sys_pkgs" ]; then
-    export JBOSS_MODULES_SYSTEM_PKGS="${sys_pkgs}"
-  fi
 }
 
 aggregate_patched_modules
