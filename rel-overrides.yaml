@@ -9,6 +9,14 @@ schema_version: 1
 #      path: jboss-eap-7.2.0.GA.CR1.zip
 #      sha256: 2eb155d4f5673215327ff0398c32f08faab9dc78cf7ceb1a0fe09613303e6bba
 
+modules:
+      repositories:
+          - name: cct_module
+            git:
+                  url: https://github.com/jboss-openshift/cct_module.git
+                  ref: sprint-27
+          - path: modules
+
 osbs:
       repository:
             name: containers/jboss-eap-7
