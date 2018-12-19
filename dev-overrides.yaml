@@ -28,7 +28,16 @@ schema_version: 1
 #      sha256: 2eb155d4f5673215327ff0398c32f08faab9dc78cf7ceb1a0fe09613303e6bba
 # hash values are optional, but when building for release, *must* be provided.
 
+modules:
+      repositories:
+          - name: cct_module
+            git:
+                  url: https://github.com/jboss-openshift/cct_module.git
+                  ref: sprint-27
+          - path: modules
+
 # below is used when building images for release
+
 osbs:
   repository:
     name: containers/jboss-eap-7
