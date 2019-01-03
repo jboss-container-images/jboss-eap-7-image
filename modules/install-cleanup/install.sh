@@ -2,17 +2,11 @@
 
 set -e
 
-SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-7.1.0.GA.zip"
-EAP_VERSION="7.1"
-
-unzip -q $SOURCES_DIR/$DISTRIBUTION_ZIP
-mv jboss-eap-$EAP_VERSION $JBOSS_HOME
-
-$JBOSS_HOME/bin/jboss-cli.sh -Dorg.wildfly.patching.jar.invalidation=true --command="patch apply $SOURCES_DIR/jboss-eap-7.1.4-patch.zip"
-
 function remove_scrapped_jars {
-  find $JBOSS_HOME -name \*.jar.patched -printf "%h\n" | sort | uniq | xargs rm -rv
+  local patched=$(find $JBOSS_HOME -name \*.jar.patched -printf "%h\n")
+  if [ -n "$patched" ]; then
+    echo "$patched" | sort | uniq | xargs rm -rv
+  fi
 }
 
 function update_permissions {
@@ -24,6 +18,11 @@ function update_permissions {
 function aggregate_patched_modules {
   export JBOSS_PIDFILE=/tmp/jboss.pid
   cp -r $JBOSS_HOME/standalone /tmp/
+
+  local sys_pkgs="$JBOSS_MODULES_SYSTEM_PKGS"
+  if [ -n "$sys_pkgs" ]; then
+    export JBOSS_MODULES_SYSTEM_PKGS=""
+  fi
 
   $JBOSS_HOME/bin/standalone.sh --admin-only -Djboss.server.base.dir=/tmp/standalone &
 
@@ -50,7 +49,6 @@ function aggregate_patched_modules {
 
   rm -rf /tmp/standalone
 }
-
 
 aggregate_patched_modules
 remove_scrapped_jars
