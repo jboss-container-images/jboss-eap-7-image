@@ -1,17 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-cd.zip"
-
-unzip -d $SOURCES_DIR/eap-cd-dist -q $SOURCES_DIR/$DISTRIBUTION_ZIP
-DIST_NAME=`ls $SOURCES_DIR/eap-cd-dist`
-
-mv $SOURCES_DIR/eap-cd-dist/$DIST_NAME $JBOSS_HOME
-
+# https://issues.jboss.org/browse/CLOUD-1260
+# https://issues.jboss.org/browse/CLOUD-1431
 function remove_scrapped_jars {
-  find $JBOSS_HOME -name \*.jar.patched -printf "%h\n" | sort | uniq | xargs rm -rv
+  for file in $(find $JBOSS_HOME -name \*.jar); do
+    if ! jar -tf  $file &> /dev/null; then
+      echo "Cleaning up '$file' jar..."
+      rm -rf $file
+    fi
+  done
+
+  # https://issues.jboss.org/browse/CLOUD-1430
+  find $JBOSS_HOME/bundles/system/layers/base/.overlays -type d -empty -delete
 }
 
 function update_permissions {
@@ -21,6 +23,11 @@ function update_permissions {
 }
 
 function aggregate_patched_modules {
+ local sys_pkgs="$JBOSS_MODULES_SYSTEM_PKGS"
+  if [ -n "$sys_pkgs" ]; then
+    export JBOSS_MODULES_SYSTEM_PKGS=""
+  fi
+
   export JBOSS_PIDFILE=/tmp/jboss.pid
   cp -r $JBOSS_HOME/standalone /tmp/
 
@@ -54,3 +61,4 @@ function aggregate_patched_modules {
 ## aggregate_patched_modules
 ## remove_scrapped_jars
 update_permissions
+
