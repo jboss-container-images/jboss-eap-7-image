@@ -9,7 +9,7 @@ labels:
       value: "jboss-eap-7-eap-cd-container"
 
 packages:
-  content_sets_file: content_sets.yml
+       content_sets_file: content_sets.yml
 
 modules:
       repositories:
