@@ -2,7 +2,7 @@ schema_version: 1
 
 name: "jboss-eap-7/eap-cd"
 description: "The JBoss EAP continuous delivery (JBoss EAP CD) releases are intended to be Technology Preview - The JBoss EAP CD OpenShift container image is provided as technology preview. It is intended for development use only. It should NOT be deployed on production or in environments that are not intended for development use."
-version: "13.0"
+version: "14.0"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
     - name: "com.redhat.component"
@@ -29,7 +29,7 @@ envs:
     - name: "JBOSS_EAP_VERSION"
       value: "7.2.0-cd"
     - name: "PRODUCT_VERSION"
-      value: "13.0"
+      value: "14.0"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -44,12 +44,17 @@ ports:
       expose: false
 modules:
       repositories:
-          - name: jboss-eap-modules
-            git:
-                  url: https://github.com/jboss-container-images/jboss-eap-modules.git
-                  ref: master
+          - path: modules
       install:
           - name: jboss.eap.cd.base.installer
+
+# note: these should be overridden in the corresponding -override.yaml files.
+# and built with concreate / cekit --overrides=dev-overrides.yaml etc
+artifacts:
+    - name: jboss-eap-cd.zip
+      path: jboss-eap-7.2.0.CD14.CR2.zip
+      sha256: c666772d27ca8b4ad4b830bc6e5dd3eeaa060039f29fb45f8274ad2f66b9137d
+
 run:
       user: 185
       cmd:

@@ -1,5 +1,7 @@
 schema_version: 1
 
+# cp-overrides.yaml
+# see dev-overrides.yaml for more information
 labels:
     - name: "PRODUCT_VERSION"
       value: "13.0-SP01"
