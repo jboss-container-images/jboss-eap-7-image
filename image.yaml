@@ -2,65 +2,30 @@ schema_version: 1
 
 name: "jboss-eap-7/eap71"
 description: "Red Hat JBoss Enterprise Application Platform 7.1 container image"
-version: "7.1.5"
-from: "jboss/openjdk18-rhel7:1.1"
+version: "7.1.6"
+from: "rhel7:7-released"
 labels:
     - name: "com.redhat.component"
       value: "jboss-eap-7-eap71-container"
-    - name: "org.jboss.product"
-      value: "eap"
-    - name: "org.jboss.product.version"
-      value: "7.1.5.GA"
-    - name: "org.jboss.product.eap.version"
-      value: "7.1.5.GA"
-    - name: "com.redhat.deployments-dir"
-      value: "/opt/eap/standalone/deployments"
-    - name: "com.redhat.dev-mode"
-      value: "DEBUG:true"
-      description: "Environment variable used to enable development mode (debugging). A value of true will enable development mode."
-    - name: "com.redhat.dev-mode.port"
-      value: "DEBUG_PORT:8787"
-      description: "Environment variable used to specify the debug port. If not set, the default EAP debug port will be used (8787). Only applicable when development mode is enabled."
-envs:
-    - name: "LAUNCH_JBOSS_IN_BACKGROUND"
-      value: "true"
-    - name: "JBOSS_PRODUCT"
-      value: "eap"
-    - name: "JBOSS_EAP_VERSION"
-      value: "7.1.5.GA"
-    - name: "PRODUCT_VERSION"
-      value: "7.1.5.GA"
-    - name: "JBOSS_HOME"
-      value: "/opt/eap"
-    - name: "DEBUG"
-      example: "true"
-      description: "Specify true to enable development mode (debugging)."
-    - name: "DEBUG_PORT"
-      example: "8787"
-      description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
-ports:
-    - value: 8080
-    - value: 8787
-      expose: false
+
+packages:
+  content_sets_file: content_sets.yml
+
 modules:
       repositories:
+          - name: cct_module
+            git:
+                  url: https://github.com/jboss-openshift/cct_module.git
+                  ref: master
           - path: modules
       install:
-          - name: eap-7
-artifacts:
-    # 7.1.0.CR4 (7.1.0.GA-redhat-11)
-    - path: jboss-eap-7.1.0.GA.zip
-      md5: 9f608e6603a8db05316e6effd5440fca
-    - path: jboss-eap-7.1.5-patch.zip
-      md5: e7d0b29faaa4eeaef528fe8b8b0eb0c4
+          - name: jboss.container.openjdk.jdk
+            version: "8"
+          - name: eap-7.1-latest
 
-run:
-      user: 185
-      cmd:
-          - "/opt/eap/bin/standalone.sh"
-          - "-b"
-          - "0.0.0.0"
 osbs:
+      configuration:
+            container_file: container.yaml
       repository:
             name: containers/jboss-eap-7
             branch: jb-eap-7.1-rhel-7
