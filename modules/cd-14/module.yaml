@@ -42,7 +42,8 @@ ports:
       expose: false
 
 artifacts:
-     - path: jboss-eap-cd.zip
+     - name: jboss-eap-cd.zip
+       target: jboss-eap-cd.zip
        sha256: c666772d27ca8b4ad4b830bc6e5dd3eeaa060039f29fb45f8274ad2f66b9137d
 
 run:
