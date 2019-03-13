@@ -44,7 +44,7 @@ ports:
 artifacts:
      - name: jboss-eap-cd.zip
        target: jboss-eap-cd.zip
-       sha256: c666772d27ca8b4ad4b830bc6e5dd3eeaa060039f29fb45f8274ad2f66b9137d
+       md5: 13d244b62e76f0bf3cc4252e3f7bf0d4
 
 run:
       user: 185
