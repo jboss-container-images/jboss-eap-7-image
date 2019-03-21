@@ -4,5 +4,5 @@ name: "eap-7.2-latest"
 description: "Red Hat JBoss Enterprise Application Platform 7.2 latest version install module"
 modules:
       install:
-          - name: eap-7.2.0
+          - name: eap-7.2.1
           - name: eap-install-cleanup
