@@ -4,5 +4,5 @@ name: eap-cd-latest
 description: "Red Hat JBoss Enterprise Application Platform CD latest version install module"
 modules:
       install:
-          - name: eap-cd-15
+          - name: eap-cd-16
           - name: eap-install-cleanup

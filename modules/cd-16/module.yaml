@@ -1,0 +1,58 @@
+schema_version: 1
+
+name: "eap-cd-16"
+description: "JBoss Enterprise Application Platform CD 16 install"
+labels:
+    - name: "com.redhat.component"
+      value: "jboss-eap-7-eap-cd-container"
+    - name: "org.jboss.product"
+      value: "eap"
+    - name: "org.jboss.product.version"
+      value: "7.3.0"
+    - name: "org.jboss.product.eap.version"
+      value: "7.3.0"
+    - name: "com.redhat.deployments-dir"
+      value: "/opt/eap/standalone/deployments"
+    - name: "com.redhat.dev-mode"
+      value: "DEBUG:true"
+      description: "Environment variable used to enable development mode (debugging). A value of true will enable development mode."
+    - name: "com.redhat.dev-mode.port"
+      value: "DEBUG_PORT:8787"
+      description: "Environment variable used to specify the debug port. If not set, the default EAP debug port will be used (8787). Only applicable when development mode is enabled."
+envs:
+    - name: "LAUNCH_JBOSS_IN_BACKGROUND"
+      value: "true"
+    - name: "JBOSS_PRODUCT"
+      value: "eap"
+    - name: "JBOSS_EAP_VERSION"
+      value: "7.3.0-cd"
+    - name: "PRODUCT_VERSION"
+      value: "16.0"
+    - name: "JBOSS_HOME"
+      value: "/opt/eap"
+    - name: "DEBUG"
+      example: "true"
+      description: "Specify true to enable development mode (debugging)."
+    - name: "DEBUG_PORT"
+      example: "8787"
+      description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
+ports:
+    - value: 8080
+    - value: 8787
+      expose: false
+
+artifacts:
+     - name: jboss-eap-cd.zip
+       target: jboss-eap-cd.zip
+       md5: c6c5690dd226280b612eed960d66a2f9
+
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/standalone.sh"
+          - "-b"
+          - "0.0.0.0"
+
+execute:
+    - script: install.sh
+
