@@ -14,7 +14,7 @@ envs:
       value: "7.2.1.GA"
 artifacts:
     - path: jboss-eap-7.2.1-patch.zip
-      md5: d260fb7b6bbaec271409d66ed5966700
+      md5: ab1dbf214eb2f934bcc3569c7376638c
 modules:
       install:
           - name: eap-7.2.0
