@@ -1,6 +1,6 @@
-#JBoss Enterprise Application Platform continuous delivery container image
+#JBoss Enterprise Application Platform CeKit installation module
 
-NOTE: Extends link:https://github.com/jboss-container-images/jboss-openjdk-image[JBoss OpenJDK image]
+NOTE: 
 
 # License
 
