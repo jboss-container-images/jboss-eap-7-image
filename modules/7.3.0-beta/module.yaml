@@ -1,18 +1,15 @@
 schema_version: 1
 
-name: "eap-cd-env"
-description: "JBoss Enterprise Application Platform CD 18 env and labels"
-version: "18.0"
-
+name: "eap-7.3.0.Beta"
+version: "7.3.0.Beta"
+description: "JBoss Enterprise Application Platform 7.3.0.Beta install"
 labels:
-    - name: "com.redhat.component"
-      value: "jboss-eap-7-eap-cd-container"
     - name: "org.jboss.product"
       value: "eap"
     - name: "org.jboss.product.version"
-      value: "7.3.0"
+      value: "7.3.0.Beta"
     - name: "org.jboss.product.eap.version"
-      value: "7.3.0"
+      value: "7.3.0.Beta"
     - name: "com.redhat.deployments-dir"
       value: "/opt/eap/standalone/deployments"
     - name: "com.redhat.dev-mode"
@@ -27,9 +24,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "eap"
     - name: "JBOSS_EAP_VERSION"
-      value: "7.3.0-cd"
+      value: "7.3.0.Beta"
     - name: "PRODUCT_VERSION"
-      value: "18.0"
+      value: "7.3.0.Beta"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
@@ -42,3 +39,19 @@ ports:
     - value: 8080
     - value: 8787
       expose: false
+
+artifacts:
+     - name: jboss-eap-7.3.zip
+       target: jboss-eap-7.3.zip
+       md5: dae47fa6414e6c2b0c8b977dad513523
+
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/standalone.sh"
+          - "-b"
+          - "0.0.0.0"
+
+execute:
+    - script: install.sh
+
