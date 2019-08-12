@@ -1,6 +1,7 @@
 schema_version: 1
 
 name: eap-cd-latest
+version: "1.0"
 description: "Red Hat JBoss Enterprise Application Platform CD latest version install module"
 modules:
       install:
