@@ -1,6 +1,7 @@
 schema_version: 1
 
 name: "eap-cd-17"
+version: "1.0"
 description: "JBoss Enterprise Application Platform CD 17 install"
 labels:
     - name: "com.redhat.component"
