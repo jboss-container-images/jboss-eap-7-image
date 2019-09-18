@@ -14,7 +14,8 @@ envs:
     - name: "PRODUCT_VERSION"
       value: "7.2.3.GA"
 artifacts:
-    - path: jboss-eap-7.2.3-patch.zip
+    - name: jboss-eap-7.2.3-patch.zip
+      path: jboss-eap-7.2.3-patch.zip
       md5: 7aa7c5a52facbe591b7e63194ee52006
 modules:
       install:
