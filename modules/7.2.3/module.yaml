@@ -1,5 +1,5 @@
 schema_version: 1
-
+version: "1.0"
 name: "eap-7.2.3"
 description: "Red Hat JBoss Enterprise Application Platform 7.2.3 patch upgrade"
 labels:
