@@ -1,0 +1,7 @@
+schema_version: 1
+
+name: "eap-install-cleanup"
+version: "1.0"
+description: "Cleans up filesystem after EAP installation and upgrades."
+execute:
+    - script: install.sh

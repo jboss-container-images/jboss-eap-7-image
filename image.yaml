@@ -2,61 +2,34 @@ schema_version: 1
 
 name: "jboss-eap-7/eap-cd"
 description: "The JBoss EAP continuous delivery (JBoss EAP CD) releases are intended to be Technology Preview - The JBoss EAP CD OpenShift container image is provided as technology preview. It is intended for development use only. It should NOT be deployed on production or in environments that are not intended for development use."
-version: "13.0"
-from: "jboss/openjdk18-rhel7:1.1"
+version: "17.0"
+from: "ubi8:8-released"
 labels:
     - name: "com.redhat.component"
-      value: "jboss-eap-7-eap-cd-container"
-    - name: "org.jboss.product"
-      value: "eap"
-    - name: "org.jboss.product.version"
-      value: "7.2.0"
-    - name: "org.jboss.product.eap.version"
-      value: "7.2.0"
-    - name: "com.redhat.deployments-dir"
-      value: "/opt/eap/standalone/deployments"
-    - name: "com.redhat.dev-mode"
-      value: "DEBUG:true"
-      description: "Environment variable used to enable development mode (debugging). A value of true will enable development mode."
-    - name: "com.redhat.dev-mode.port"
-      value: "DEBUG_PORT:8787"
-      description: "Environment variable used to specify the debug port. If not set, the default EAP debug port will be used (8787). Only applicable when development mode is enabled."
-envs:
-    - name: "LAUNCH_JBOSS_IN_BACKGROUND"
-      value: "true"
-    - name: "JBOSS_PRODUCT"
-      value: "eap"
-    - name: "JBOSS_EAP_VERSION"
-      value: "7.2.0-cd"
-    - name: "PRODUCT_VERSION"
-      value: "13.0"
-    - name: "JBOSS_HOME"
-      value: "/opt/eap"
-    - name: "DEBUG"
-      example: "true"
-      description: "Specify true to enable development mode (debugging)."
-    - name: "DEBUG_PORT"
-      example: "8787"
-      description: "Specify the port to use for debugging. If not set, the default EAP debug port will be used (8787).  Only applicable when development mode is enabled."
-ports:
-    - value: 8080
-    - value: 8787
-      expose: false
+      value: "jboss-eap-7-eap-cd-rhel8-container"
+
+packages:
+       content_sets_file: content_sets.yml
+
 modules:
       repositories:
-          - name: jboss-eap-modules
+          - name: cct_module
             git:
+                  url: https://github.com/jboss-openshift/cct_module.git
+                  ref: master
+          - path: modules
                   url: https://github.com/jboss-container-images/jboss-eap-modules.git
                   ref: master
       install:
-          - name: jboss.eap.cd.base.installer
-run:
-      user: 185
-      cmd:
-          - "/opt/eap/bin/standalone.sh"
-          - "-b"
-          - "0.0.0.0"
+          - name: jboss.container.openjdk.jdk
+            version: "11"
+          - name: jboss.container.maven.35.bash
+            version: "3.5"
+          - name: eap-cd-latest
+
 osbs:
+      configuration:
+            container_file: container.yaml
       repository:
             name: containers/jboss-eap-7
-            branch: jb-eap-7.2-cd-rhel-7
+            branch: jb-eap-7.3-cd-rhel-8
