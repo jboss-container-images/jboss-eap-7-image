@@ -12,5 +12,5 @@ schema_version: 1
 osbs:
       repository:
             name: containers/jboss-eap-7
-            branch: jb-eap-7.3-cd-rhel-7
+            branch: jb-eap-7.3-cd-rhel-8
 
