@@ -1,0 +1,9 @@
+schema_version: 1
+
+name: eap-cd-env-latest
+version: "1.0"
+description: "Red Hat JBoss Enterprise Application Platform CD latest version env module"
+modules:
+      install:
+          - name: eap-cd-env
+            version: '18.0'
