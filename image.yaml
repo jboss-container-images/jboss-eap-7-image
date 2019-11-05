@@ -2,7 +2,7 @@ schema_version: 1
 
 name: "jboss-eap-7/eap72"
 description: "Red Hat JBoss Enterprise Application Platform 7.2 container image"
-version: "7.2.4"
+version: "7.2.5"
 from: "rhel7:7-released"
 labels:
     - name: "com.redhat.component"
