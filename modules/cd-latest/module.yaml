@@ -5,5 +5,5 @@ version: "1.0"
 description: "Red Hat JBoss Enterprise Application Platform CD latest version install module"
 modules:
       install:
-          - name: eap-cd-17
+          - name: eap-cd-18
           - name: eap-install-cleanup

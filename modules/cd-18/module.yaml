@@ -1,0 +1,26 @@
+schema_version: 1
+
+name: "eap-cd-18"
+version: "1.0"
+description: "JBoss Enterprise Application Platform CD 18 modular zip install"
+
+modules:
+      install:
+          - name: "eap-cd-env"
+            version: "18.0"
+
+artifacts:
+     - name: jboss-eap-cd.zip
+       target: jboss-eap-cd.zip
+       md5: 31c202eb6113c7aba77e0fff83c302c7
+
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/standalone.sh"
+          - "-b"
+          - "0.0.0.0"
+
+execute:
+    - script: install.sh
+
