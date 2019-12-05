@@ -5,5 +5,5 @@ version: "1.0"
 description: "Red Hat JBoss Enterprise Application Platform 7.2 latest version install module"
 modules:
       install:
-          - name: eap-7.2.5
+          - name: eap-7.2.6
           - name: eap-install-cleanup
