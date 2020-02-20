@@ -16,7 +16,7 @@ envs:
 artifacts:
     - name: jboss-eap-7.2.7-patch
       target: jboss-eap-7.2.7-patch.zip
-      md5: 21d48f9e13d38e487194388db0e86a04
+      md5: 34a8787d5f5cdf54d5c1477ab1bdf47b
 modules:
       install:
           - name: eap-7.2.0
