@@ -20,6 +20,9 @@ artifacts:
     - name: jbeap-18811
       target: jbeap-18811.zip
       md5: c8ecfa7a0c68c3c21a3333b1e5a9c343
+    - name: jbeap-19005
+      target: jbeap-19005.zip
+      md5: fdd21dc421f771e79edbe77257e14c54
 modules:
       install:
           - name: eap-7.2.0
