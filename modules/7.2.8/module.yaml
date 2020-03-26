@@ -1,0 +1,24 @@
+schema_version: 1
+
+name: "eap-7.2.8"
+version: "1.0"
+description: "Red Hat JBoss Enterprise Application Platform 7.2.8 patch upgrade"
+labels:
+    - name: "org.jboss.product.version"
+      value: "7.2.8.GA"
+    - name: "org.jboss.product.eap.version"
+      value: "7.2.8.GA"
+envs:
+    - name: "JBOSS_EAP_VERSION"
+      value: "7.2.8.GA"
+    - name: "PRODUCT_VERSION"
+      value: "7.2.8.GA"
+artifacts:
+    - name: jboss-eap-7.2.8-patch
+      target: jboss-eap-7.2.8-patch.zip
+      md5: 1810475433681fb32f96dfd5089b5814
+modules:
+      install:
+          - name: eap-7.2.0
+execute:
+    - script: install.sh
