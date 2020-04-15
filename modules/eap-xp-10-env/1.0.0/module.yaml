@@ -1,14 +1,14 @@
 schema_version: 1
 
 name: "eap-xp-10-env"
-description: "JBoss Enterprise Application Platform XP 1.0 env and labels"
+description: "JBoss Enterprise Application Platform expansion pack 1.0 env and labels"
 version: "1.0.0"
 
 labels:
     - name: "org.jboss.product"
       value: "eap-xp"
     - name: "org.jboss.product.version"
-      value: "1.0"
+      value: "1.0.0"
     - name: "org.jboss.product.eap.version"
       value: "7.3.1"
     - name: "com.redhat.deployments-dir"
@@ -29,7 +29,7 @@ envs:
     - name: "JBOSS_EAP_VERSION"
       value: "7.3.1"
     - name: "PRODUCT_VERSION"
-      value: "1.0"
+      value: "1.0.0"
     - name: "JBOSS_HOME"
       value: "/opt/eap"
     - name: "DEBUG"
