@@ -17,6 +17,10 @@ artifacts:
     - name: jboss-eap-7.2.8-patch
       target: jboss-eap-7.2.8-patch.zip
       md5: 1c7dc0a96928afb8d6ff1e456ae57de5
+    - name: jbeap-19005
+      target: jbeap-19359.zip
+      md5: ceedd909b926d3d6f34816b7bddd966d
+
 modules:
       install:
           - name: eap-7.2.0
