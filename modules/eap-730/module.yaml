@@ -6,7 +6,7 @@ version: "7.3.0"
 artifacts:
      - name: jboss-eap-7.3.zip
        target: jboss-eap-7.3.zip
-       md5: 3dba80cc1be17b00cb901441111886f3
+       md5: 61de10b13a825443ec376d000d65b132
 
 run:
       user: 185
