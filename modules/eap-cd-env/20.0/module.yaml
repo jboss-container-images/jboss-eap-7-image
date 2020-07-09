@@ -31,7 +31,7 @@ envs:
     - name: "JBOSS_EAP_VERSION"
       value: "7.4.0-cd"
     - name: "PRODUCT_VERSION"
-      value: "12.0"
+      value: "20.0"
     - name: "EAP_FULL_GROUPID"
       value: "org.jboss.eap.cd"
     - name: "JBOSS_HOME"
