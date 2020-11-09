@@ -6,4 +6,4 @@ description: "Red Hat JBoss Enterprise Application Platform latest version env m
 modules:
       install:
           - name: eap-73-env
-            version: '7.3.3'
+            version: '7.3.4'
