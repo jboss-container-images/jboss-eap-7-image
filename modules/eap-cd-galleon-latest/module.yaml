@@ -6,4 +6,4 @@ description: "Red Hat JBoss Enterprise Application Platform CD latest version ga
 modules:
       install:
           - name: eap-cd-galleon
-            version: '20.0'
+            version: '21.0'

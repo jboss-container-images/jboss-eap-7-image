@@ -1,0 +1,12 @@
+schema_version: 1
+name: eap-cd-galleon
+version: '21.0'
+description: Install Galleon feature-pack-build file with dependency on wildfly-galleon-pack, default config being inherited from wildfly-ee-galleon-pack
+
+execute:
+- script: configure.sh
+
+modules:
+      install:
+          - name: eap-cd-env
+            version: '21.0'

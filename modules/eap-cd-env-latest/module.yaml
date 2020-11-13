@@ -6,4 +6,4 @@ description: "Red Hat JBoss Enterprise Application Platform CD latest version en
 modules:
       install:
           - name: eap-cd-env
-            version: '20.0'
+            version: '21.0'
