@@ -10,7 +10,7 @@ artifacts:
 
      - name: jboss-eap-7.3.4-patch
        target: jboss-eap-7.3.4-patch.zip
-       md5: 7ffa00d4a17344ebc1409264c96a36e6
+       md5: c37fcbbf369647c1904dc061737e866c
 
 run:
       user: 185
