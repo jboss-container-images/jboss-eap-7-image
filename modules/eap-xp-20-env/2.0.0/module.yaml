@@ -2,7 +2,7 @@ schema_version: 1
 
 name: "eap-xp-20-env"
 description: "JBoss Enterprise Application Platform expansion pack 2.0 env and labels"
-version: "2.0.0"
+version: "1.0.0"
 
 labels:
     - name: "org.jboss.product"
