@@ -4,9 +4,9 @@ name: eap-730
 version: "7.3.0"
 
 artifacts:
-     - name: jboss-eap-7.3.zip
-       target: jboss-eap-7.3.zip
-       md5: 61de10b13a825443ec376d000d65b132
+     - name: jboss-eap-7.4.Beta.zip
+       target: jboss-eap-7.4.Beta.zip
+       md5: db6665dd4068200db502f83fa11772ba
 
 run:
       user: 185

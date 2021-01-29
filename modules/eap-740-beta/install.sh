@@ -3,7 +3,7 @@
 set -e
 
 SOURCES_DIR=/tmp/artifacts/
-DISTRIBUTION_ZIP="jboss-eap-7.3.zip"
+DISTRIBUTION_ZIP="jboss-eap-7.4.Beta.zip"
 
 unzip -d $SOURCES_DIR/eap-dist -q $SOURCES_DIR/$DISTRIBUTION_ZIP
 DIST_NAME=`ls $SOURCES_DIR/eap-dist`
