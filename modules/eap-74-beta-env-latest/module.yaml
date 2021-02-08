@@ -1,0 +1,9 @@
+schema_version: 1
+
+name: eap-74-beta-env-latest
+version: "1.0"
+description: "Red Hat JBoss Enterprise Application Platform latest version env module"
+modules:
+      install:
+          - name: eap-74-beta-env
+            version: '7.4.0.Beta'
