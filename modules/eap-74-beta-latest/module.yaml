@@ -1,0 +1,11 @@
+schema_version: 1
+
+name: eap-74-beta-latest
+
+description: "Red Hat JBoss Enterprise Application Platform 7.4.0.Beta latest version install module"
+version: "7.4-beta-latest"
+modules:
+      install:
+          - name: eap-74-beta-env-latest
+          - name: eap-74
+          - name: eap-install-cleanup
