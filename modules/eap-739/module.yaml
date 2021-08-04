@@ -1,0 +1,24 @@
+schema_version: 1
+
+name: eap-739
+version: "7.3.9"
+
+artifacts:
+     - name: jboss-eap-7.3.zip
+       target: jboss-eap-7.3.zip
+       md5: 3dba80cc1be17b00cb901441111886f3
+
+     - name: jboss-eap-7.3.9-patch
+       target: jboss-eap-7.3.9-patch.zip
+       md5: f5ab25762b3f889b542e606e329dc6e2
+
+run:
+      user: 185
+      cmd:
+          - "/opt/eap/bin/standalone.sh"
+          - "-b"
+          - "0.0.0.0"
+
+execute:
+    - script: install.sh
+

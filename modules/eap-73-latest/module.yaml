@@ -2,10 +2,10 @@ schema_version: 1
 
 name: eap-73-latest
 
-description: "Red Hat JBoss Enterprise Application Platform 7.3.8 latest version install module"
+description: "Red Hat JBoss Enterprise Application Platform 7.3.9 latest version install module"
 version: "7.3-latest"
 modules:
       install:
           - name: eap-73-env-latest
-          - name: eap-738
+          - name: eap-739
           - name: eap-install-cleanup
