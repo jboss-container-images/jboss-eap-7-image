@@ -2,11 +2,11 @@ schema_version: 1
 
 name: eap-74-latest
 version: "7.4-latest"
-description: "Red Hat JBoss Enterprise Application Platform EAP 7.4.0 latest version install module"
+description: "Red Hat JBoss Enterprise Application Platform EAP 7.4 latest version install module"
 modules:
   install:
     - name: eap-74-env
-      version: '7.4.0'
-    - name: eap-740
-      version: '7.4.0'
+      version: '7.4.1'
+    - name: eap-741
+      version: '7.4.1'
     - name: eap-install-cleanup
