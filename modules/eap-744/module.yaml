@@ -6,7 +6,7 @@ version: "7.4.4"
 artifacts:
   - name: jboss-eap-7.4.zip
     target: jboss-eap-7.4.zip
-    md5: 58263e1daa0f08e457cd3cddb93ec49a
+    md5: feddc39d58a29b1ed9791121a77e8b49
 
   - name: jboss-eap-7.4.4-patch
     target: jboss-eap-7.4.4-patch.zip
