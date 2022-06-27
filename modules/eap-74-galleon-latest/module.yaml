@@ -2,8 +2,8 @@ schema_version: 1
 
 name: eap-74-galleon-latest
 version: "1.0"
-description: "Red Hat JBoss Enterprise Application Platform EAP 7.4.5 latest version galleon module"
+description: "Red Hat JBoss Enterprise Application Platform EAP 7.4.6 latest version galleon module"
 modules:
       install:
           - name: eap-74-galleon
-            version: '7.4.5'
+            version: '7.4.6'
