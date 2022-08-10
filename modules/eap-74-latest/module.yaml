@@ -7,6 +7,6 @@ modules:
   install:
     - name: eap-74-env
       version: '7.4.6'
-    - name: eap-745
+    - name: eap-746
       version: '7.4.6'
     - name: eap-install-cleanup
