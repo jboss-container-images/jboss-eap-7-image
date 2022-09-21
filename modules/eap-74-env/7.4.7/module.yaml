@@ -21,7 +21,7 @@ labels:
       description: "Environment variable used to specify the debug port. If not set, the default EAP debug port will be used (8787). Only applicable when development mode is enabled."
 envs:
     - name: "WILDFLY_VERSION"
-      value: "7.4.7.GA-redhat-00001"
+      value: "7.4.7.GA-redhat-00003"
     - name: "LAUNCH_JBOSS_IN_BACKGROUND"
       value: "true"
     - name: "JBOSS_PRODUCT"
