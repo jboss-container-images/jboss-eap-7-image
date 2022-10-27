@@ -1,0 +1,23 @@
+schema_version: 1
+
+name: eap-748
+version: "7.4.8"
+
+artifacts:
+  - name: jboss-eap-7.4.zip
+    target: jboss-eap-7.4.zip
+    md5: feddc39d58a29b1ed9791121a77e8b49
+
+  - name: jboss-eap-7.4.8-patch
+    target: jboss-eap-7.4.8-patch.zip
+    md5: 00f84bbb5a19a77f8f9dd3c1d0909b8d
+
+run:
+  user: 185
+  cmd:
+    - "/opt/eap/bin/standalone.sh"
+    - "-b"
+    - "0.0.0.0"
+
+execute:
+  - script: install.sh
