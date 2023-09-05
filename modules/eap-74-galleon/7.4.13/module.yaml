@@ -1,0 +1,12 @@
+schema_version: 1
+name: eap-74-galleon
+version: '7.4.13'
+description: Install Galleon feature-pack-build file with dependency on wildfly-galleon-pack, default config being inherited from wildfly-ee-galleon-pack
+
+execute:
+- script: configure.sh
+
+modules:
+      install:
+          - name: eap-74-env
+            version: '7.4.13'
