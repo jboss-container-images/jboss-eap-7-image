@@ -6,7 +6,7 @@ description: "Red Hat JBoss Enterprise Application Platform EAP 7.4 latest versi
 modules:
   install:
     - name: eap-74-env
-      version: '7.4.16'
-    - name: eap-7416
-      version: '7.4.16'
+      version: '7.4.17'
+    - name: eap-7417
+      version: '7.4.17'
     - name: eap-install-cleanup
