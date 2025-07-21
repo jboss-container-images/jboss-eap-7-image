@@ -12,6 +12,10 @@ artifacts:
     target: jboss-eap-7.4.23-patch.zip
     md5: 82feb025a81f4a53edf9c35dc35b50ab
 
+  - name: jbeap-30487
+    target: jbeap-30487.zip
+    md5: ad241f94dd8389d8804a3c3ab4ab30c1 
+
 run:
   user: 185
   cmd:
