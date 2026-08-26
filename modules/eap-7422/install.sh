@@ -12,3 +12,6 @@ mv $SOURCES_DIR/eap-dist/$DIST_NAME $JBOSS_HOME
 
 export JAVA_OPTS="${JAVA_OPTS} -Dorg.wildfly.patching.jar.invalidation=true"
 $JBOSS_HOME/bin/jboss-cli.sh --command="patch apply $SOURCES_DIR/jboss-eap-7.4.22-patch.zip"
+
+
+$JBOSS_HOME/bin/jboss-cli.sh --command="patch apply $SOURCES_DIR/jbeap-30288.zip"
